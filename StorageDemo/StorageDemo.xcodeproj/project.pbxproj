@@ -16,6 +16,7 @@
 		8064A56C1F8CBCC00084E3E9 /* User+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8064A5691F8CBCC00084E3E9 /* User+CoreDataClass.m */; };
 		8064A56D1F8CBCC00084E3E9 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8064A56B1F8CBCC00084E3E9 /* User+CoreDataProperties.m */; };
 		8064A5701F8CBE800084E3E9 /* TTCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8064A56F1F8CBE800084E3E9 /* TTCoreDataManager.m */; };
+		80E02A581F8EFCEA00C6F004 /* TTArchiverManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E02A571F8EFCEA00C6F004 /* TTArchiverManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		8064A56B1F8CBCC00084E3E9 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		8064A56E1F8CBE800084E3E9 /* TTCoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTCoreDataManager.h; sourceTree = "<group>"; };
 		8064A56F1F8CBE800084E3E9 /* TTCoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTCoreDataManager.m; sourceTree = "<group>"; };
+		80E02A561F8EFCEA00C6F004 /* TTArchiverManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTArchiverManager.h; sourceTree = "<group>"; };
+		80E02A571F8EFCEA00C6F004 /* TTArchiverManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTArchiverManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,8 @@
 				8064A5501F8CBBF80084E3E9 /* AppDelegate.m */,
 				8064A56E1F8CBE800084E3E9 /* TTCoreDataManager.h */,
 				8064A56F1F8CBE800084E3E9 /* TTCoreDataManager.m */,
+				80E02A561F8EFCEA00C6F004 /* TTArchiverManager.h */,
+				80E02A571F8EFCEA00C6F004 /* TTArchiverManager.m */,
 				8064A5521F8CBBF80084E3E9 /* ViewController.h */,
 				8064A5531F8CBBF80084E3E9 /* ViewController.m */,
 				8064A5551F8CBBF80084E3E9 /* Main.storyboard */,
@@ -163,6 +168,7 @@
 				8064A5541F8CBBF80084E3E9 /* ViewController.m in Sources */,
 				8064A5511F8CBBF80084E3E9 /* AppDelegate.m in Sources */,
 				8064A5621F8CBBF80084E3E9 /* main.m in Sources */,
+				80E02A581F8EFCEA00C6F004 /* TTArchiverManager.m in Sources */,
 				8064A5701F8CBE800084E3E9 /* TTCoreDataManager.m in Sources */,
 				8064A56C1F8CBCC00084E3E9 /* User+CoreDataClass.m in Sources */,
 			);
