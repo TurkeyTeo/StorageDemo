@@ -267,7 +267,3 @@ Core Data还能对非法数据进行过滤，还支持对数据操作的Undo/Red
 ```
 
 
-
-<br>
-
-[Demo下载](https://github.com/TurkeyTeo/StorageDemo)
