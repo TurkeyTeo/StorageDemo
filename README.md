@@ -1,4 +1,5 @@
 # StorageDemo
+##1. Core Data
 ###1. 简介
 
 Core Data是一种基于SQLite的可视化数据持久化解决方案。它允许按照`实体`-`属性`-`值模型`组织数据，并且支持XML文件、二进制文件、SQLite数据文件操作。
@@ -266,4 +267,50 @@ Core Data还能对非法数据进行过滤，还支持对数据操作的Undo/Red
     NSLog(@"%lu",(unsigned long)array3.count);
 ```
 
-
+##2.Archiver
+```
+    //   一.使用archiveRootObject进行简单的归档。
+    //    可以对字符串、数字等进行归档，当然也可以对NSArray与NSDictionary进行归档。返回值Flag标志着是否归档成功，YES为成功，NO为失败。
+    
+    //    归档
+    //    1.获取文件路径
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    //2.添加存储的文件名
+    NSString *path = [docPath stringByAppendingPathComponent:@"data.archiver"];
+    //3.将一个对象保存到文件中
+    BOOL flag = [NSKeyedArchiver archiveRootObject:@"Turkey" toFile:path];
+    NSLog(@"%d",flag);
+    
+    
+    //    解档
+    //    1.获取文件路径
+    NSLog(@"path=%@",path);
+    //    2.从文件中读取对象
+    id name = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    NSLog(@"%@",name);
+    
+    
+    //    *************************************************
+    
+    
+    //    二.对多个对象进行归档。（基本类型）
+    //    1.归档：使用encodeObject
+    NSString *myName = @"Teo";
+    NSInteger age = 26;
+    NSString *multiPath = [docPath stringByAppendingPathComponent:@"multi.archiver"];
+    NSMutableData *data = [[NSMutableData alloc] init];
+    NSKeyedArchiver *multiArchvier = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    [multiArchvier encodeObject:myName forKey:@"name"];
+    [multiArchvier encodeInteger:age forKey:@"age"];
+    [multiArchvier finishEncoding];
+    [data writeToFile:multiPath atomically:YES];
+    
+    //    解档：从路径中获得数据构造NSKeyedUnarchiver实例，使用encodeObject: forKey:方法获得文件中的对象。
+    NSMutableData *dataR = [[NSMutableData alloc] initWithContentsOfFile:multiPath];
+    NSKeyedUnarchiver *multiUnarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:dataR];
+    NSString *unName = [multiUnarchiver decodeObjectForKey:@"name"];
+    NSInteger unAge = [multiUnarchiver decodeIntegerForKey:@"age"];
+    [multiUnarchiver finishDecoding];
+    NSLog(@"解档多个对象：%@ %ld",unName,unAge);
+    
+    
